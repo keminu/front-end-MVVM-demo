@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="[a single mvvm]">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MVVM</title>
+</head>
+<body>
+<div id="root">
+  <div>
+    <div lait-model="user"></div>
+    <ul lait-list="todos">
+      <h1 lait-model="title"></h1>
+      <div>
+      <li lait-list-item="todos">
+        <p lait-class="todos:done" lait-model="todos:creator"></p>
+        <p lait-model="todos:date"></p>
+        <p lait-model="todos:content"></p>
+        <ul lait-list="todos:members">
+          <li lait-list-item="todos:members">
+            <span lait-model="todos:members:name"></span>
+          </li>
+        </ul>
+      </li>
+      </div>
+    </ul>
+  </div>
+</div>
+<div id="bind">
+  <h1 lait-model="title"></h1>
+  <input lait-model="content" lait-event="input" type="text" />
+  <p lait-model="content"></p>
+  <p lait-model="content"></p>
+</div>
+<div id="nest">
+  <h1 lait-model="title"></h1>
+  <h2 lait-model="todos:title"></h1>
+  <ul lait-list="todos:tag:members">
+    <li lait-list-item="todos:tag:members">
+      <span lait-model="todos:tag:members:name"></span>
+    </li>
+  </ul>
+</div>
+<div id="arr">
+  <div>
+  <div>
+  <ul lait-list="todos:words:arr">
+  <div>
+  <div>
+    <li lait-list-item="todos:words:arr">
+  <div>
+  <div>
+      <span lait-model="todos:words:arr"></span>
+  </div>
+  </div>
+    </li>
+  </div>
+  </div>
+  </ul>
+  </div>
+  </div>
+</div>
+<script src="dist/index.js"></script>
+</body>
+</html>
